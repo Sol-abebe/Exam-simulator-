@@ -1,0 +1,1780 @@
+ <!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Behavioral Competency & Ethiopian Health Policy MCQ Master Pro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .card-3d {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        .animate-glow {
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30">
+                    <i class="fa-solid fa-brain text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base sm:text-lg bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Competency & Health Policy Master</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">270 Advanced MCQs | Behavioral, Ethics & Ethiopian Health Law</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Resume Notification Banner / Button -->
+                <div id="resumeContainer" class="hidden">
+                    <button onclick="resumeQuiz()" class="inline-flex items-center space-x-1.5 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 hover:bg-amber-500/20 px-3 py-1.5 rounded-lg text-xs font-semibold transition animate-bounce">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Resume Quiz</span>
+                    </button>
+                </div>
+
+                <!-- Mode Switcher -->
+                <div class="bg-slate-200 dark:bg-slate-800 p-1 rounded-xl flex items-center text-xs font-medium">
+                    <button id="modePracticeBtn" onclick="switchMode('practice')" class="px-3 py-1.5 rounded-lg transition bg-white dark:bg-emerald-600 text-slate-800 dark:text-white shadow-sm">
+                        Practice
+                    </button>
+                    <button id="modeExamBtn" onclick="switchMode('exam')" class="px-3 py-1.5 rounded-lg transition text-slate-600 dark:text-slate-400">
+                        Exam Simulator
+                    </button>
+                </div>
+
+                <!-- Timer Badge (Exam Mode) -->
+                <div id="examTimerBadge" class="hidden items-center space-x-1.5 bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 px-3 py-1.5 rounded-xl text-xs font-bold">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span id="timerDisplay">60:00</span>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button onclick="toggleDarkMode()" class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:scale-105 transition">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <!-- Left Column: Search, Stats & Question Navigation Drawer -->
+        <div class="lg:col-span-1 space-y-6">
+            <!-- Search & Filter Card -->
+            <div class="glass-card rounded-2xl p-4 shadow-lg card-3d">
+                <h3 class="font-bold text-sm mb-3 flex items-center text-slate-700 dark:text-slate-200">
+                    <i class="fa-solid fa-filter text-emerald-500 mr-2"></i> Filter & Search
+                </h3>
+                <div class="space-y-3">
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                            <i class="fa-solid fa-search text-xs"></i>
+                        </span>
+                        <input type="text" id="searchInput" oninput="filterQuestions()" placeholder="Search questions, scenarios..." class="w-full pl-9 pr-3 py-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                    <div>
+                        <select id="categoryFilter" onchange="filterQuestions()" class="w-full py-2 px-3 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            <option value="all">All Categories (270 Qs)</option>
+                            <option value="behavioral">Core Behavioral Competencies</option>
+                            <option value="policy">Ethiopian Health Policy & HSTP II</option>
+                            <option value="medicolegal">Medicolegal & Malpractice Law</option>
+                            <option value="ethics">Medical Ethics & Case Scenarios</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 pt-1">
+                        <button onclick="filterStatus('all')" class="status-tab py-1.5 px-2 rounded-lg text-xs font-semibold bg-emerald-500 text-white transition text-center" data-status="all">All</button>
+                        <button onclick="filterStatus('flagged')" class="status-tab py-1.5 px-2 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 transition text-center" data-status="flagged">Flagged</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Stats Card -->
+            <div class="glass-card rounded-2xl p-4 shadow-lg card-3d">
+                <h3 class="font-bold text-sm mb-3 flex items-center text-slate-700 dark:text-slate-200">
+                    <i class="fa-solid fa-chart-pie text-teal-500 mr-2"></i> Progress Overview
+                </h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-500 dark:text-slate-400">Answered:</span>
+                        <span id="statAnswered" class="font-bold">0 / 270</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div id="statProgressBar" class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-0 transition-all duration-300"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+                        <div class="bg-emerald-500/10 p-2 rounded-xl text-center">
+                            <span class="block text-emerald-600 dark:text-emerald-400 font-bold text-sm" id="statCorrect">0</span>
+                            <span class="text-[10px] text-slate-500">Correct</span>
+                        </div>
+                        <div class="bg-rose-500/10 p-2 rounded-xl text-center">
+                            <span class="block text-rose-600 dark:text-rose-400 font-bold text-sm" id="statIncorrect">0</span>
+                            <span class="text-[10px] text-slate-500">Incorrect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Navigator Grid Card -->
+            <div class="glass-card rounded-2xl p-4 shadow-lg card-3d max-h-80 flex flex-col">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold text-sm flex items-center text-slate-700 dark:text-slate-200">
+                        <i class="fa-solid fa-map-location-dot text-indigo-500 mr-2"></i> Question Navigator
+                    </h3>
+                    <span class="text-[10px] text-slate-400" id="navTotalCount">270 Qs</span>
+                </div>
+                <div id="questionNavigatorGrid" class="grid grid-cols-6 gap-1.5 overflow-y-auto pr-1 flex-grow">
+                    <!-- Dynamic Grid Buttons generated via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Active Question Card & Explanation Box -->
+        <div class="lg:col-span-3 space-y-6 flex flex-col">
+            
+            <!-- Question Card -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl card-3d relative flex-grow flex flex-col justify-between">
+                
+                <div>
+                    <!-- Question Top Bar -->
+                    <div class="flex items-center justify-between mb-4">
+                        <span id="questionCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            Core Behavioral Competency
+                        </span>
+                        <div class="flex items-center space-x-3">
+                            <span id="questionNumberIndicator" class="text-xs font-semibold text-slate-400">Question 1 of 270</span>
+                            <button onclick="toggleBookmarkCurrent()" id="bookmarkBtn" class="text-slate-400 hover:text-amber-500 transition text-lg" title="Flag for Review">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question Text / Scenario -->
+                    <h2 id="questionTitle" class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 mb-6 leading-relaxed">
+                        Loading question...
+                    </h2>
+
+                    <!-- Options List -->
+                    <div id="optionsContainer" class="space-y-3 mb-6">
+                        <!-- Dynamic Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Explanation Box (Initially Hidden / Controlled by Practice or Submission) -->
+                <div id="explanationBox" class="hidden mt-4 p-5 rounded-2xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center space-x-2">
+                            <div id="explanationIcon" class="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h4 id="explanationTitle" class="font-bold text-sm">Explanation & Rationale</h4>
+                        </div>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Expert Analysis</span>
+                    </div>
+                    <p id="explanationText" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+                </div>
+
+                <!-- Bottom Navigation Bar Controls -->
+                <div class="flex items-center justify-between pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
+                    <button onclick="prevQuestion()" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 font-semibold text-xs transition flex items-center space-x-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Previous</span>
+                    </button>
+                    
+                    <div class="flex items-center space-x-2">
+                        <button id="submitExamBtn" onclick="submitExam()" class="hidden px-5 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-red-500 text-white font-bold text-xs shadow-lg shadow-rose-500/30 hover:scale-105 transition">
+                            Submit Exam
+                        </button>
+                        <button onclick="nextQuestion()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-bold text-xs shadow-lg shadow-emerald-500/30 hover:scale-105 transition flex items-center space-x-2">
+                            <span>Next</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer with Solomon Abebe (MD, MPH/ RH) Footnote -->
+    <footer class="glass-card border-t border-slate-200 dark:border-slate-800 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 space-y-3 sm:space-y-0">
+            <div>
+                <p>Advanced Competency & Ethiopian Health Policy Master App &copy; 2026. All rights reserved.</p>
+            </div>
+            <div class="flex items-center space-x-2 font-medium text-slate-700 dark:text-slate-300 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl">
+                <i class="fa-solid fa-user-shield text-emerald-500"></i>
+                <span>Created & Maintained by: <strong class="text-emerald-600 dark:text-emerald-400">Solomon Abebe (MD, MPH/ RH)</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Application Logic -->
+    <script>
+        // Theme Toggle
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = "fa-solid fa-sun";
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                icon.className = "fa-solid fa-moon";
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Initialize Theme from Storage
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.getElementById('themeIcon').className = "fa-solid fa-sun";
+        }
+
+        // Question Database (270 Questions: Core Behavioral + 200 Ethiopian Health Policy, Medicolegal & Ethics Case Scenarios)
+        const questions = [
+            // --- CORE BEHAVIORAL COMPETENCY QUESTIONS (1 to 70) ---
+            {
+                id: 1,
+                category: "behavioral",
+                tag: "Strategic Thinking & Leadership",
+                question: "What is the primary cognitive focus of Strategic Thinking & Leadership as an advanced behavioral competency in public administration?",
+                options: [
+                    "Maximizing departmental autonomy at the expense of whole-of-government coordination.",
+                    "Enforcing rigid adherence to legacy bureaucratic procedures without questioning precedents.",
+                    "Connecting daily operational routines directly to overarching enterprise goals and national development outcomes.",
+                    "Reacting exclusively to immediate crises and daily administrative emergencies."
+                ],
+                correct: 2,
+                explanation: "Strategic Thinking & Leadership requires administrators to transcend daily firefighting and connect daily operational execution directly to overarching enterprise goals and national development outcomes."
+            },
+            {
+                id: 2,
+                category: "behavioral",
+                tag: "Strategic Thinking & Leadership",
+                question: "How does short-term operational firefighting fundamentally differ from long-term visionary foresight?",
+                options: [
+                    "Firefighting relies on empirical data analysis, whereas foresight focuses entirely on historical precedent.",
+                    "Firefighting reacts exclusively to immediate crises, whereas foresight anticipates future challenges and designs structural solutions.",
+                    "Firefighting eliminates administrative bottlenecks, whereas foresight creates operational friction.",
+                    "Firefighting prioritizes national policy frameworks, whereas foresight concentrates solely on minor administrative memos."
+                ],
+                correct: 1,
+                explanation: "Operational firefighting is purely reactive to immediate crises, whereas visionary foresight is proactive, anticipating future macro-environmental shifts and engineering structural solutions."
+            },
+            {
+                id: 3,
+                category: "behavioral",
+                tag: "Strategic Thinking & Leadership",
+                question: "Which of the following best exemplifies Environmental Scanning & Future Foresight within strategic management?",
+                options: [
+                    "Tracking demographic shifts, economic trends, and emerging regulatory risks to design preemptive mitigation strategies.",
+                    "Applying temporary band-aids to recurring surface-level administrative symptoms.",
+                    "Focusing exclusively on internal departmental audit reports from the previous fiscal year.",
+                    "Waiting for a legislative mandate to change before analyzing its operational impact."
+                ],
+                correct: 0,
+                explanation: "Environmental scanning involves actively monitoring external trends, demographic shifts, and emerging regulatory risks to proactively formulate preemptive institutional strategies."
+            },
+            {
+                id: 4,
+                category: "behavioral",
+                tag: "Systems Thinking",
+                question: "In the context of Systems Thinking & Holistic Problem-Solving, what is the primary role of a public administrator?",
+                options: [
+                    "Prioritizing speed over systemic accuracy when drafting executive briefs.",
+                    "Treating every administrative bottleneck as an independent, unrelated anomaly.",
+                    "Isolating departmental tasks to ensure zero interaction with adjacent ministries.",
+                    "Recognizing interdependencies across departments and addressing root causes rather than isolated symptoms."
+                ],
+                correct: 3,
+                explanation: "Systems thinking demands looking at the whole ecosystem, understanding interdependencies across directorates, and diagnosing root causes rather than treating isolated surface symptoms."
+            },
+            {
+                id: 5,
+                category: "behavioral",
+                tag: "Strategic Frameworks",
+                question: "What is the core purpose of utilizing analytical strategic frameworks such as PESTEL and SWOT in public administration?",
+                options: [
+                    "To increase bureaucratic approval tiers for standard operational licenses.",
+                    "To justify bypassing legal compliance rules during budget allocation processes.",
+                    "To systematically evaluate external macro-factors and internal capabilities to formulate proactive strategic choices.",
+                    "To eliminate the need for stakeholder consultation and public-private dialogue."
+                ],
+                correct: 2,
+                explanation: "PESTEL and SWOT frameworks provide a structured method to analyze external macro-environments and internal institutional strengths/weaknesses for sound strategic decisions."
+            },
+            {
+                id: 6,
+                category: "behavioral",
+                tag: "Strategic Thinking",
+                question: "Which behavior indicates Level 1 (Below Expectations / Reactive) Strategic Thinking during a civil service appraisal?",
+                options: [
+                    "Connecting daily responsibilities to departmental goals using basic SWOT analysis.",
+                    "Demonstrating advanced future foresight and mastering complex policy ambiguity.",
+                    "Championing cross-agency alignment and digital institutional transformation.",
+                    "Focusing solely on immediate daily firefighting while ignoring macro-environmental trends and institutional vision."
+                ],
+                correct: 3,
+                explanation: "Level 1 performance is characterized by short-termism, daily firefighting, and complete detachment from macro-environmental trends and long-term organizational vision."
+            },
+            {
+                id: 7,
+                category: "behavioral",
+                tag: "Innovation & Creativity",
+                question: "How does Innovation as a behavioral competency manifest in civil service operations?",
+                options: [
+                    "By avoiding all forms of pilot testing due to an intense aversion to failure.",
+                    "By questioning status-quo processes, generating novel ideas, and translating them into practical operational improvements.",
+                    "By strictly adhering to historical precedents without ever altering standard operating procedures.",
+                    "By eliminating digital tools in favor of purely manual paper-based registries."
+                ],
+                correct: 1,
+                explanation: "Innovation requires challenging the status quo constructively, ideating creative solutions, and implementing practical improvements that enhance service delivery."
+            },
+            {
+                id: 8,
+                category: "behavioral",
+                tag: "Innovation & Creativity",
+                question: "What is the fundamental difference between routine problem-solving and creative breakthroughs?",
+                options: [
+                    "Routine problem-solving requires long-term visionary foresight, whereas creative breakthroughs focus solely on daily firefighting.",
+                    "Routine problem-solving violates legal compliance, whereas creative breakthroughs bypass statutory regulations.",
+                    "Routine problem-solving eliminates red tape, whereas creative breakthroughs multiply bureaucratic sign-off layers.",
+                    "Routine problem-solving restores a broken process to its baseline using established rules, whereas creative breakthroughs redesign the system to eliminate the bottleneck entirely."
+                ],
+                correct: 3,
+                explanation: "Routine problem solving fixes a glitch within existing rules, whereas creative breakthroughs transform or redesign the system to eliminate bottlenecks permanently."
+            },
+            {
+                id: 9,
+                category: "behavioral",
+                tag: "Risk Management",
+                question: "Which practice best supports Calculated Risk-Taking and Experimentation in public sector innovation?",
+                options: [
+                    "Punishing employees severely whenever an initial experimental prototype requires refinement.",
+                    "Developing small-scale prototypes and pilot testing workflows in controlled units before wide-scale rollout.",
+                    "Strictly banning any deviation from legacy standard operating procedures.",
+                    "Launching unproven, massive institutional overhauls agency-wide without prior testing."
+                ],
+                correct: 1,
+                explanation: "Controlled pilot testing and small-scale prototyping allow public agencies to foster innovation safely while managing implementation risks."
+            },
+            {
+                id: 10,
+                category: "behavioral",
+                tag: "Continuous Improvement",
+                question: "What role does the Kaizen mindset play in workplace innovation and continuous improvement?",
+                options: [
+                    "It drives commitment to continuous, small-step improvements in daily administrative tasks.",
+                    "It mandates complete organizational restructuring once every decade.",
+                    "It enforces rigid adherence to historical bureaucratic precedents.",
+                    "It eliminates the need for digital transformation tools."
+                ],
+                correct: 0,
+                explanation: "Kaizen is the philosophy of continuous, incremental improvements driven by frontline staff in everyday administrative workflows."
+            },
+            {
+                id: 11,
+                category: "behavioral",
+                tag: "Design Thinking",
+                question: "Which framework applies a human-centered approach (Empathize, Define, Ideate, Prototype, Test) to solve operational challenges?",
+                options: [
+                    "Porter's Five Forces",
+                    "Design Thinking",
+                    "Short-Term Firefighting",
+                    "PESTEL Analysis"
+                ],
+                correct: 1,
+                explanation: "Design Thinking is an iterative, human-centered framework focused on deeply understanding user needs (Empathize) and prototyping solutions."
+            },
+            {
+                id: 12,
+                category: "behavioral",
+                tag: "Market Building",
+                question: "What is the primary definition of Market Building as a behavioral competency in public administration?",
+                options: [
+                    "Establishing state-run monopolies over all commercial production and retail sectors.",
+                    "Maximizing regulatory friction to delay commercial project rollouts.",
+                    "Designing, facilitating, and nurturing environments where commerce, enterprise, and investment can thrive as an economic enabler.",
+                    "Enforcing strict administrative controls and collecting paperwork with suspicion."
+                ],
+                correct: 2,
+                explanation: "Market building involves shaping regulatory enablers, streamlining business processes, and nurturing vibrant public-private ecosystems for economic growth."
+            },
+            {
+                id: 13,
+                category: "behavioral",
+                tag: "Market Building",
+                question: "How does proactive market facilitation differ from traditional bureaucratic regulation?",
+                options: [
+                    "Facilitation ignores tax and labor laws, whereas regulation strictly enforces safety standards.",
+                    "Facilitation focuses exclusively on internal paperwork, whereas regulation drives foreign direct investment.",
+                    "Facilitation designs enabling environments and streamlines pathways, whereas regulation polices compliance through rigid administrative controls.",
+                    "Facilitation creates monopolies, whereas regulation fosters open market liquidity."
+                ],
+                correct: 2,
+                explanation: "Proactive facilitation reduces administrative hurdles and supports enterprise growth, whereas traditional regulation relies strictly on policing and punitive oversight."
+            },
+            {
+                id: 14,
+                category: "behavioral",
+                tag: "Economic Analysis",
+                question: "What is the purpose of conducting a Value Chain Analysis in economic sector administration?",
+                options: [
+                    "To establish bureaucratic approval tiers for administrative leave requests.",
+                    "To evaluate internal employee emotional intelligence scores during recruitment.",
+                    "To calculate individual daily operational firefighting metrics.",
+                    "To systematically break down an industry from raw materials to final delivery to pinpoint cost inflations and regulatory bottlenecks."
+                ],
+                correct: 3,
+                explanation: "Value chain analysis maps out all economic activities from production to final market delivery to identify and eliminate cost inflations and regulatory bottlenecks."
+            },
+            {
+                id: 15,
+                category: "behavioral",
+                tag: "Digital Transformation",
+                question: "What is the primary function of a Digital One-Stop-Shop Licensing Platform?",
+                options: [
+                    "To mandate paper-based registries and multi-tier manual sign-offs for entrepreneurs.",
+                    "To integrate disparate government approvals into a single online portal to accelerate business startup and trade clearance.",
+                    "To isolate municipal economic data from national ministries.",
+                    "To restrict foreign direct investment through opaque regulatory hurdles."
+                ],
+                correct: 1,
+                explanation: "One-stop digital shops consolidate multiple regulatory approvals into a single portal, drastically reducing processing time and business startup friction."
+            },
+            {
+                id: 16,
+                category: "behavioral",
+                tag: "Market Architect",
+                question: "Which behavior characterizes Level 3 (Exceeds Expectations / Market Architect) in market-building appraisals?",
+                options: [
+                    "Proactively designing investor-friendly regulatory frameworks, championing digital portals, and establishing vibrant public-private dialogue platforms.",
+                    "Processing standard economic applications efficiently and following basic guidelines.",
+                    "Delaying project rollouts due to strict adherence to outdated legacy rules.",
+                    "Imposing heavy, unnecessary red tape and treating entrepreneurs with suspicion."
+                ],
+                correct: 0,
+                explanation: "Level 3 market architects actively co-create investor-friendly frameworks, champion digital transformation, and foster active public-private partnerships."
+            },
+            {
+                id: 17,
+                category: "behavioral",
+                tag: "Role-Modeling Leadership",
+                question: "What is the core conceptual definition of Role-Modeling Leadership within behavioral competency frameworks?",
+                options: [
+                    "The passive observance of daily administrative routines without holding staff accountable.",
+                    "The avoidance of stakeholder engagement and reliance solely on positional authority.",
+                    "The operational capacity to execute tasks efficiently, set strategic objectives, distribute work fairly, and personify institutional standards.",
+                    "The delegation of all ethical responsibilities to external compliance auditors."
+                ],
+                correct: 2,
+                explanation: "Role-modeling leadership combines high technical competence, fair task distribution, and the embodiment of core institutional values ('walking the talk')."
+            },
+            {
+                id: 18,
+                category: "behavioral",
+                tag: "Role-Modeling Leadership",
+                question: "Why is consistency between words and actions ('Walking the Talk') critical for a role-model leader?",
+                options: [
+                    "It allows leaders to bypass civil service laws during resource allocation.",
+                    "It eliminates the need for formal performance appraisal systems.",
+                    "It establishes credibility, sets a reliable performance benchmark, and earns the trust of peers and subordinates.",
+                    "It prevents employees from offering constructive feedback upward."
+                ],
+                correct: 2,
+                explanation: "Alignment between rhetoric and action builds authentic leadership credibility, fosters psychological safety, and earns deep institutional trust."
+            },
+            {
+                id: 19,
+                category: "behavioral",
+                tag: "Behavioral Audits",
+                question: "What is the primary purpose of conducting Behavioral Audits in leadership development?",
+                options: [
+                    "To evaluate leadership and professional behaviors across departments to detect discrepancies between expected competencies and daily actions.",
+                    "To calculate annual budgetary expenditures for office supplies.",
+                    "To enforce mandatory overtime for underperforming staff.",
+                    "To eliminate the need for transparent performance appraisals."
+                ],
+                correct: 0,
+                explanation: "Behavioral audits assess whether organizational leaders actually demonstrate stated competency frameworks in their day-to-day managerial interactions."
+            },
+            {
+                id: 20,
+                category: "behavioral",
+                tag: "Succession Planning",
+                question: "How does role-modeling leadership contribute to effective Succession Planning?",
+                options: [
+                    "By concealing performance data to prevent competitive tension among staff.",
+                    "By relying exclusively on external recruitment for all senior executive positions.",
+                    "By discouraging junior staff from taking on leadership responsibilities.",
+                    "By continuously assessing staff capabilities, mentoring high-potential personnel, and building a reliable internal talent pipeline."
+                ],
+                correct: 3,
+                explanation: "Effective leaders act as mentors, systematically identifying high-potential staff, delegating developmental tasks, and building a resilient internal talent pipeline."
+            },
+            {
+                id: 21,
+                category: "behavioral",
+                tag: "Communication & Influencing",
+                question: "What is the core conceptual definition of Communication and Influencing as a behavioral competency?",
+                options: [
+                    "Using positional rank and authoritarian threats to force immediate staff compliance.",
+                    "Broadcasting transactional data reports without listening to recipient feedback.",
+                    "Maintaining closed departmental silos to restrict the flow of administrative insights.",
+                    "Exchanging messages clearly, understanding information deeply, and guiding outcomes constructively to drive institutional results."
+                ],
+                correct: 3,
+                explanation: "Strategic communication is a two-way process involving clarity, deep empathy, active listening, and constructive persuasion to align stakeholders toward shared goals."
+            },
+            {
+                id: 22,
+                category: "behavioral",
+                tag: "Communication",
+                question: "What distinguishes functional information-sharing from strategic influencing?",
+                options: [
+                    "Information-sharing focuses on external stakeholders, whereas strategic influencing is restricted to internal audits.",
+                    "Information-sharing requires active persuasion, whereas strategic influencing relies solely on mechanical memo distribution.",
+                    "Information-sharing eliminates bureaucratic friction, whereas strategic influencing creates administrative delays.",
+                    "Information-sharing transmits neutral operational data, whereas strategic influencing shapes attitudes, aligns diverse interests, and mobilizes action."
+                ],
+                correct: 3
+            },
+            {
+                id: 23,
+                category: "behavioral",
+                tag: "Active Listening",
+                question: "What is a key behavior associated with Empathic Active Listening in professional communication?",
+                options: [
+                    "Tuning into emotional undercurrents, asking clarifying questions, and explicitly validating speaker input.",
+                    "Interrupting speakers frequently to dominate meeting agendas and assert authority.",
+                    "Dismissing citizen frustrations as irrelevant administrative noise.",
+                    "Waiting passively for your turn to speak without processing the speaker's core message."
+                ],
+                correct: 0,
+                explanation: "Empathic active listening involves deep cognitive presence, emotional attunement, clarifying inquiries, and validating the speaker's perspective."
+            },
+            {
+                id: 24,
+                category: "behavioral",
+                tag: "Public Trust",
+                question: "How does transparent and empathetic communication impact public trust in government agencies?",
+                options: [
+                    "It eliminates suspicions of unfair treatment, reduces public frustration, and strengthens institutional legitimacy.",
+                    "It forces citizens to rely on intermediaries to understand basic public policies.",
+                    "It creates operational ambiguity and encourages administrative corruption.",
+                    "It increases processing times and multiplies bureaucratic hurdles for citizens."
+                ],
+                correct: 0,
+                explanation: "Open, transparent, and empathetic public communication eliminates administrative opacity, builds rapport, and enhances institutional legitimacy."
+            },
+            {
+                id: 25,
+                category: "behavioral",
+                tag: "Communication",
+                question: "Which behavior represents Low-Influence Communication in the workplace?",
+                options: [
+                    "Creating psychological safety by welcoming diverse perspectives in meetings.",
+                    "Using dense bureaucratic jargon, vague instructions, and authoritative coercion to force compliance.",
+                    "Engaging in win-win negotiations that focus on shared institutional interests.",
+                    "Tailoring messages logically to resonate with audience priorities and background knowledge."
+                ],
+                correct: 1,
+                explanation: "Relying on opaque jargon, ambiguity, and authoritarian threats alienates stakeholders and constitutes poor, low-influence communication."
+            },
+            {
+                id: 26,
+                category: "behavioral",
+                tag: "Teamwork",
+                question: "What is the core conceptual definition of Teamwork as a behavioral competency?",
+                options: [
+                    "Occupying the same office space while guarding isolated tasks ('not my job').",
+                    "Working collaboratively with diverse staff, building shared accountability, resolving differences, and achieving results together.",
+                    "Competing aggressively against departmental peers to secure personal recognition.",
+                    "Delegating all group responsibilities to a single junior staff member."
+                ],
+                correct: 1,
+                explanation: "Effective teamwork requires collaborative synergy, mutual accountability, respectful conflict resolution, and shared dedication to group objectives."
+            },
+            {
+                id: 27,
+                category: "behavioral",
+                tag: "Teamwork",
+                question: "What distinguishes passive group coexistence from active collaborative synergy?",
+                options: [
+                    "Coexistence involves isolated individuals guarding their tasks, whereas synergy pools diverse talents to produce outcomes greater than the sum of parts.",
+                    "Coexistence requires cross-training, whereas synergy focuses on individual isolation.",
+                    "Coexistence relies on digital project dashboards, whereas synergy uses paper-based memos.",
+                    "Coexistence eliminates interpersonal friction, whereas synergy creates administrative bottlenecks."
+                ],
+                correct: 0,
+                explanation: "Coexistence is mere physical proximity with isolated duties, whereas synergy integrates complementary talents to achieve exponential collective results."
+            },
+            {
+                id: 28,
+                category: "behavioral",
+                tag: "Kanban & Tools",
+                question: "How do Joint Project Trackers and Kanban boards enhance workplace teamwork?",
+                options: [
+                    "By replacing all human communication with automated error messages.",
+                    "By encouraging departmental turf wars and hidden information hoarding.",
+                    "By providing every team member with real-time visibility into project milestones, task statuses, and responsibilities.",
+                    "By multiplying approval tiers and restricting document access to senior executives."
+                ],
+                correct: 2,
+                explanation: "Kanban boards and joint trackers establish transparent operational workflows, ensuring everyone knows task ownership and project milestones."
+            },
+            {
+                id: 29,
+                category: "behavioral",
+                tag: "Team KPIs",
+                question: "What is a primary benefit of establishing Team-Level Key Performance Indicators (KPIs)?",
+                options: [
+                    "They eliminate the need for supervisory leadership oversight.",
+                    "They isolate directorates into rigid administrative silos.",
+                    "They penalize high-performing employees for assisting struggling peers.",
+                    "They make individual success contingent on group synchronization, reinforcing mutual support over cutthroat competition."
+                ],
+                correct: 3,
+                explanation: "Team KPIs align incentives toward collective achievement, discouraging hyper-individualism and encouraging peer support and mutual aid."
+            },
+            {
+                id: 30,
+                category: "behavioral",
+                tag: "Teamwork",
+                question: "Which behavior characterizes Level 1 (Below Expectations / Uncooperative) Teamwork?",
+                options: [
+                    "Mediating professional conflicts constructively and putting collective goals above personal glory.",
+                    "Proactively assisting struggling peers, mentoring junior staff, and building bridges across silos.",
+                    "Operating strictly in closed silos, refusing to share resources, and engaging in turf wars or blaming peers.",
+                    "Cooperating smoothly, fulfilling assigned duties on schedule, and communicating respectfully."
+                ],
+                correct: 2,
+                explanation: "Level 1 uncooperative behavior involves silo mentality, turf protection, blame-shifting, and refusal to share resources or knowledge."
+            },
+            {
+                id: 31,
+                category: "behavioral",
+                tag: "Emotional Intelligence",
+                question: "What is the core conceptual definition of Emotional Intelligence (EI) as a behavioral competency?",
+                options: [
+                    "The strict adherence to automated bureaucratic rules without empathy.",
+                    "The capacity to suppress all human emotions during administrative decision-making.",
+                    "The observable cluster of habits, emotional reactions, and social skills that allow individuals to recognize, understand, regulate, and direct emotions constructively.",
+                    "An innate, unchangeable personality trait focused purely on logical mathematical reasoning (IQ)."
+                ],
+                correct: 2,
+                explanation: "EI is the set of emotional and social competencies enabling individuals to self-regulate, empathize, manage interpersonal dynamics, and lead constructively."
+            },
+            {
+                id: 32,
+                category: "behavioral",
+                tag: "EI Pillars",
+                question: "What are the four foundational pillars comprising Emotional Intelligence in the workplace?",
+                options: [
+                    "Self-Awareness, Self-Management, Social Awareness, and Relationship Management",
+                    "Strategic Planning, Financial Stewardship, Risk Assessment, and Data Analytics",
+                    "Verbal Expression, Written Reporting, Active Listening, and Public Speaking",
+                    "Compliance Regulation, Market Facilitation, Process Re-Engineering, and Auditing"
+                ],
+                correct: 0,
+                explanation: "The Goleman EI framework rests on four pillars: Self-Awareness, Self-Management, Social Awareness, and Relationship Management."
+            },
+            {
+                id: 33,
+                category: "behavioral",
+                tag: "Self-Awareness",
+                question: "How does Emotional Self-Awareness differ from Accurate Self-Assessment?",
+                options: [
+                    "Self-awareness relies on automated digital dashboards, whereas self-assessment requires peer mediation.",
+                    "Self-awareness focuses on external team dynamics, whereas self-assessment handles financial budgeting.",
+                    "Self-awareness prevents stress, whereas self-assessment causes workplace burnout.",
+                    "Self-awareness is recognizing one's emotions in real-time, whereas self-assessment is an objective evaluation of personal strengths and developmental limitations."
+                ],
+                correct: 3,
+                explanation: "Self-awareness is real-time emotional recognition, while accurate self-assessment is a structured evaluation of one's enduring professional competencies and growth areas."
+            },
+            {
+                id: 34,
+                category: "behavioral",
+                tag: "Self-Control",
+                question: "What is the primary professional benefit of Emotional Self-Control during high-pressure crises?",
+                options: [
+                    "It eliminates the need for strategic planning and risk mitigation frameworks.",
+                    "It forces subordinates to comply with executive orders without questioning authority.",
+                    "It keeps disruptive impulses in check, preventing reactive outbursts and projecting stability across the workforce.",
+                    "It accelerates paperwork processing times by bypassing standard operating procedures."
+                ],
+                correct: 2,
+                explanation: "Emotional self-control prevents amygdala hijacks during high-stress crises, projecting calm stability and maintaining rational decision-making."
+            },
+            {
+                id: 35,
+                category: "behavioral",
+                tag: "EI Workplace",
+                question: "Which behavior exemplifies Low Emotional Intelligence in the workplace?",
+                options: [
+                    "Receiving performance evaluations with an open mind and using feedback for targeted growth.",
+                    "Practicing the 'stop, breathe, and reflect' mindfulness technique before responding to provocative emails.",
+                    "De-escalating frustrated citizen complaints with patience and active listening.",
+                    "Defensiveness, blame-shifting when errors occur, and sending emotionally charged, passive-aggressive emails."
+                ],
+                correct: 3,
+                explanation: "Defensiveness, emotional outbursts, passive-aggressive communication, and blame-shifting are hallmark indicators of low emotional intelligence."
+            },
+            {
+                id: 36,
+                category: "behavioral",
+                tag: "Ethics & Integrity",
+                question: "What is the core conceptual definition of Ethics and Role Modeling as a behavioral competency in civil service?",
+                options: [
+                    "Focusing exclusively on technical task completion while ignoring moral standards.",
+                    "Treating institutional code of conduct as optional guidelines during budget allocations.",
+                    "Prioritizing personal financial gain and familial networks over public service laws.",
+                    "Striving toward the national vision, prioritizing institutional interests over personal gain, executing ethical principles, and fiercely rejecting corruption."
+                ],
+                correct: 3,
+                explanation: "Ethical civil service demands absolute integrity, putting public interest above personal gain, upholding codes of conduct, and rejecting all forms of corruption."
+            },
+            {
+                id: 37,
+                category: "behavioral",
+                tag: "Ethics Frameworks",
+                question: "What distinguishes Compliance-based Ethics from Value-based Ethics in public administration?",
+                options: [
+                    "Compliance-based ethics applies only to private enterprises, whereas value-based ethics applies to civil servants.",
+                    "Compliance-based ethics focuses on strict adherence to formal rules and anti-corruption laws, whereas value-based ethics relies on an internalized personal commitment to public service values.",
+                    "Compliance-based ethics encourages bribery, whereas value-based ethics eliminates transparency.",
+                    "Compliance-based ethics relies on emotional intelligence, whereas value-based ethics relies on rigid paperwork."
+                ],
+                correct: 1,
+                explanation: "Compliance ethics relies on rules and punitive legal deterrents, whereas value-based ethics is rooted in an intrinsic moral compass and dedication to public welfare."
+            },
+            {
+                id: 38,
+                category: "behavioral",
+                tag: "Relational Ethics",
+                question: "What is the primary role of Relational Ethics in everyday workplace interactions?",
+                options: [
+                    "Allowing personal friendships to override merit-based recruitment guidelines.",
+                    "Ensuring mutual respect for diversity, human dignity, and strict professional boundaries, preventing personal biases from influencing official decisions.",
+                    "Enforcing mandatory financial audits on private sector commercial accounts.",
+                    "Eliminating the need for transparent citizen consultation frameworks."
+                ],
+                correct: 1,
+                explanation: "Relational ethics guarantees fairness, professional boundaries, and freedom from nepotism or bias in interpersonal workplace dealings."
+            },
+            {
+                id: 39,
+                category: "behavioral",
+                tag: "Anti-Corruption",
+                question: "How do institutions effectively mitigate ethical pitfalls such as conflicts of interest and favoritism?",
+                options: [
+                    "By concealing administrative audit reports from public and internal scrutiny.",
+                    "By eliminating civil service codes of conduct to give employees total autonomy.",
+                    "By rewarding nepotism and granting exemptions to senior executives.",
+                    "By establishing transparent whistleblower protection policies, regular ethics audits, and merit-based performance rewards."
+                ],
+                correct: 3,
+                explanation: "Robust whistleblower protections, transparent audits, and strict conflict-of-interest disclosures are essential defenses against institutional corruption."
+            },
+            {
+                id: 40,
+                category: "behavioral",
+                tag: "Diversity & Inclusion",
+                question: "What is the core conceptual definition of Diversity and Inclusion (D&I) as a behavioral competency?",
+                options: [
+                    "Granting preferential treatment and hiring privileges exclusively to dominant political groups.",
+                    "Isolating diverse employee demographics into separate departmental units.",
+                    "Embracing demographic differences as a strength, providing equal rights without discrimination, and balancing equitable treatment.",
+                    "Enforcing uniform cultural assimilation and eliminating all regional and linguistic traditions."
+                ],
+                correct: 2,
+                explanation: "Diversity and inclusion means valuing demographic, cultural, and cognitive differences while ensuring equitable, discrimination-free opportunities for all."
+            },
+            {
+                id: 41,
+                category: "behavioral",
+                tag: "D&I",
+                question: "What distinguishes demographic diversity from behavioral inclusivity?",
+                options: [
+                    "Demographic diversity focuses on emotional intelligence, whereas behavioral inclusivity handles financial audits.",
+                    "Demographic diversity is the quantitative presence of diverse backgrounds, whereas behavioral inclusivity is the active daily practice ensuring everyone feels welcomed and valued.",
+                    "Demographic diversity restricts hiring practices, whereas behavioral inclusivity multiplies bureaucratic red tape.",
+                    "Demographic diversity applies only to private corporations, whereas behavioral inclusivity applies to civil service."
+                ],
+                correct: 1,
+                explanation: "Diversity is having a mix of people (representation), while inclusion is making that mix work by ensuring everyone feels heard, valued, and respected."
+            },
+            {
+                id: 42,
+                category: "behavioral",
+                tag: "Cultural Humility",
+                question: "What is a primary objective of Cultural Humility and Self-Awareness in D&I competency?",
+                options: [
+                    "Enforcing mandatory political affiliation checks during recruitment.",
+                    "Ignoring demographic differences to avoid addressing systemic inequities.",
+                    "Actively examining personal unconscious biases and cultural blind spots without viewing one's own perspective as the universal norm.",
+                    "Assuming your own cultural background is superior to all others during public interactions."
+                ],
+                correct: 2,
+                explanation: "Cultural humility requires lifelong self-reflection to recognize unconscious biases and avoid imposing one's cultural norms on others."
+            },
+            {
+                id: 43,
+                category: "behavioral",
+                tag: "Public Trust",
+                question: "How does behavioral inclusivity impact Public Trust and Citizen Representation?",
+                options: [
+                    "It creates administrative delays and increases public grievances.",
+                    "It restricts public service access to privileged political classes.",
+                    "It isolates minority communities from participating in government programs.",
+                    "It ensures public policies reflect multi-faceted societal realities and services are delivered impartially to all demographics."
+                ],
+                correct: 3,
+                explanation: "Incisive inclusion ensures diverse citizen needs are reflected in policy design and service delivery is impartial and equitable."
+            },
+            {
+                id: 44,
+                category: "behavioral",
+                tag: "Time Management",
+                question: "What is the primary purpose of Time Management as a behavioral competency in the workplace?",
+                options: [
+                    "Isolating daily schedules to avoid collaborating with departmental peers.",
+                    "Prioritizing tasks efficiently, optimizing daily schedules, and meeting institutional deliverables without unnecessary delays.",
+                    "Eliminating all rest breaks to maximize continuous operational burnout.",
+                    "Rushing administrative tasks haphazardly to finish work before reviewing quality standards."
+                ],
+                correct: 1,
+                explanation: "Effective time management is about priority setting, scheduling discipline, and meeting strategic deliverables efficiently."
+            },
+            {
+                id: 45,
+                category: "behavioral",
+                tag: "Time Stewardship",
+                question: "What distinguishes urgent operational firefighting from important long-term strategic planning in time stewardship?",
+                options: [
+                    "Urgent tasks eliminate bureaucratic red tape, whereas important tasks multiply paperwork.",
+                    "Urgent tasks require strategic thinking, whereas important tasks rely on guesswork.",
+                    "Urgent tasks are irrelevant to civil service, whereas important tasks involve answering daily emails.",
+                    "Urgent tasks demand immediate crisis reaction, whereas important tasks drive long-term institutional value and structural prevention."
+                ],
+                correct: 3,
+                explanation: "Using Eisenhower's matrix, urgent tasks demand immediate attention (often firefighting), while important tasks build long-term institutional capacity and prevent future crises."
+            },
+            {
+                id: 46,
+                category: "behavioral",
+                tag: "Value-Adding Work",
+                question: "What is the core focus of Value-Adding Work as a behavioral competency?",
+                options: [
+                    "Ensuring that every daily task, project, and output directly contributes measurable economic, social, or institutional value to stakeholders.",
+                    "Multiplying administrative approval tiers to make simple processes more complex.",
+                    "Hoarding project documents in isolated departmental filing cabinets.",
+                    "Prioritizing personal administrative convenience over citizen service delivery."
+                ],
+                correct: 0,
+                explanation: "Value-adding work focuses relentlessly on outputs that genuinely advance stakeholder outcomes rather than performing empty ceremonial tasks."
+            },
+            {
+                id: 47,
+                category: "behavioral",
+                tag: "Workflow Audits",
+                question: "How do public institutions identify and eliminate Non-Value-Adding (NVA) activities?",
+                options: [
+                    "By adding extra physical inspection queues for every citizen transaction.",
+                    "By conducting workflow audits, streamlining sign-off layers, and eliminating redundant document verifications.",
+                    "By discarding all standard operating procedure manuals entirely.",
+                    "By restricting digital automation in favor of manual paper logging."
+                ],
+                correct: 1,
+                explanation: "Workflow audits and Lean process re-engineering help organizations strip away redundant red tape and NVA bureaucratic approvals."
+            },
+            {
+                id: 48,
+                category: "behavioral",
+                tag: "Responsibility",
+                question: "What is the core conceptual definition of Carrying Out Responsibility as a behavioral competency?",
+                options: [
+                    "Delegating all official duties to junior subordinates while claiming personal credit for successes.",
+                    "Taking full personal and professional accountability for assigned duties, executing them diligently, and accepting consequences without blame-shifting.",
+                    "Blaming external economic shocks whenever project deadlines are missed.",
+                    "Treating institutional mandates as optional guidelines during busy operational cycles."
+                ],
+                correct: 1,
+                explanation: "Carrying out responsibility means owning one's assigned duties, executing them with diligence, and accepting complete accountability for outcomes."
+            },
+            {
+                id: 49,
+                category: "behavioral",
+                tag: "Accountability",
+                question: "How does personal accountability reinforce organizational integrity in public agencies?",
+                options: [
+                    "By punishing whistleblowers who report administrative malpractice.",
+                    "By ensuring that every professional owns their decisions, rectifies errors transparently, and upholds public trust.",
+                    "By encouraging employees to conceal administrative mistakes from supervisors.",
+                    "By eliminating the need for independent internal compliance audits."
+                ],
+                correct: 1,
+                explanation: "Personal accountability ensures errors are caught and corrected openly, preventing systemic failures and safeguarding public trust."
+            },
+            {
+                id: 50,
+                category: "behavioral",
+                tag: "Public Stewardship",
+                question: "What is the primary role of Public Stewardship and Servanthood in civil service operations?",
+                options: [
+                    "Treating public assets as personal property for executive enrichment.",
+                    "Isolating government offices from community feedback mechanisms.",
+                    "Prioritizing bureaucratic convenience over citizen service accessibility.",
+                    "Acting as a dedicated custodian of public assets, state funds, and citizen welfare with humility and ethical commitment."
+                ],
+                correct: 3,
+                explanation: "Public stewardship is the solemn duty to manage state funds, public assets, and citizen welfare with absolute integrity, humility, and dedication."
+            },
+            {
+                id: 51,
+                category: "behavioral",
+                tag: "Proficiency & Engagement",
+                question: "Which behavior demonstrates high Proficiency and Engagement in the workplace?",
+                options: [
+                    "Displaying chronic apathy toward professional development and resisting new software tools.",
+                    "Performing the absolute minimum required tasks to avoid administrative reprimands.",
+                    "Hoarding specialized knowledge to prevent peers from mastering operational workflows.",
+                    "Continuously upgrading professional skills, mastering technical tools, and displaying high enthusiasm and discretionary effort in daily tasks."
+                ],
+                correct: 3,
+                explanation: "High proficiency and engagement manifest as continuous upskilling, mastery of tools, and a proactive willingness to exert discretionary effort."
+            },
+            {
+                id: 52,
+                category: "behavioral",
+                tag: "Strategic Dashboards",
+                question: "What is the core purpose of a Strategic Milestone Tracking Dashboard?",
+                options: [
+                    "To calculate individual employee disciplinary write-ups and absenteeism rates.",
+                    "To display real-time progress toward long-term institutional goals and alert leadership if execution drifts off course.",
+                    "To replace all financial accounting software across government ministries.",
+                    "To conceal project execution delays from executive oversight boards."
+                ],
+                correct: 1,
+                explanation: "Tracking dashboards provide transparent, real-time visibility into strategic execution, enabling timely corrective interventions."
+            },
+            {
+                id: 53,
+                category: "behavioral",
+                tag: "Scenario Planning",
+                question: "How do Scenario Planning and Horizon Scanning protect state institutions against future shocks?",
+                options: [
+                    "By restricting inter-agency communication during emergency responses.",
+                    "By building multiple plausible future operating scenarios to test policy resilience and ensure preparedness for diverse socio-economic futures.",
+                    "By enforcing rigid bureaucratic inertia that resists all regulatory changes.",
+                    "By relying solely on historical precedent and ignoring emerging macro-trends."
+                ],
+                correct: 1,
+                explanation: "Scenario planning stress-tests policies against diverse plausible futures, enhancing institutional agility and resilience."
+            },
+            {
+                id: 54,
+                category: "behavioral",
+                tag: "Balanced Scorecard",
+                question: "What is the primary function of Balanced Scorecards in public sector performance management?",
+                options: [
+                    "Calculating individual tax compliance penalties for commercial enterprises.",
+                    "Evaluating employee emotional intelligence scores during annual salary reviews.",
+                    "Tracking institutional progress across four perspectives: financial stewardship, internal business processes, learning/growth, and citizen-centric service delivery.",
+                    "Enforcing mandatory manual sign-off layers for administrative budgeting."
+                ],
+                correct: 2,
+                explanation: "Balanced scorecards provide a holistic performance view across financial, internal process, learning, and customer/citizen dimensions."
+            },
+            {
+                id: 55,
+                category: "behavioral",
+                tag: "Cross-Agency",
+                question: "Which practice best embodies Cross-Agency Think Tanks in public administration?",
+                options: [
+                    "Creating institutional collaboration forums where leaders from different ministries meet regularly to debate complex challenges and harmonize strategies.",
+                    "Delegating all policy formulation tasks to external private lobbying groups.",
+                    "Banning inter-departmental meetings to speed up daily desk paperwork.",
+                    "Isolating regional bureau directors into separate offices to prevent communication."
+                ],
+                correct: 0,
+                explanation: "Cross-agency think tanks break down governmental silos, fostering collaborative policy harmonization across distinct ministries."
+            },
+            {
+                id: 56,
+                category: "behavioral",
+                tag: "Regulatory Impact",
+                question: "What is the primary purpose of Regulatory Impact Assessments (RIAs) before enacting new administrative directives?",
+                options: [
+                    "To justify bypassing environmental and labor standards during industrial expansion.",
+                    "To eliminate public-private dialogue platforms permanently.",
+                    "To measure the potential financial, operational, and compliance burden on businesses, ensuring regulations foster growth rather than stifle it.",
+                    "To increase government revenue through heavy commercial licensing fines."
+                ],
+                correct: 2,
+                explanation: "RIAs evaluate the economic and compliance costs of proposed rules, ensuring regulations achieve public policy goals without suffocating business growth."
+            },
+            {
+                id: 57,
+                category: "behavioral",
+                tag: "Experimentation",
+                question: "How do Safe-to-Fail Experimentation Policies foster innovation within public institutions?",
+                options: [
+                    "By allowing unmonitored policy overhauls across all regional bureaus simultaneously.",
+                    "By eliminating civil service codes of conduct and legal compliance rules.",
+                    "By permitting small-scale, controlled experiments without the threat of punitive measures if an initial prototype requires refinement.",
+                    "By punishing employees whenever an innovation pilot does not succeed immediately."
+                ],
+                correct: 2,
+                explanation: "Safe-to-fail policies remove the fear of punitive retribution for calculated pilot failures, encouraging creative innovation and iterative testing."
+            },
+            {
+                id: 58,
+                category: "behavioral",
+                tag: "Public-Private Dialogue",
+                question: "What is the primary role of Public-Private Dialogue (PPD) Forums in market building?",
+                options: [
+                    "Enforcing state monopolies over commercial pricing and retail distribution.",
+                    "Multiplying bureaucratic approval tiers for business start-ups.",
+                    "Isolating government officials from commercial investor feedback.",
+                    "Establishing transparent platforms where regulators meet with commercial associations to co-create solutions and review draft policies."
+                ],
+                correct: 3,
+                explanation: "PPD forums build trust and collaborative problem-solving channels between government regulators and private sector investors."
+            },
+            {
+                id: 59,
+                category: "behavioral",
+                tag: "Crisis Management",
+                question: "How does emotional self-regulation contribute to effective crisis management in civil service?",
+                options: [
+                    "By preventing emotional hijacking, maintaining cognitive focus, and guiding teams through sudden operational shocks with calm authority.",
+                    "By suppressing citizen feedback during public hearings.",
+                    "By delegating all emergency response duties to external consultants.",
+                    "By replacing data-driven analysis with impulsive intuition."
+                ],
+                correct: 0,
+                explanation: "Self-regulation during crises stabilizes teams, prevents panic, and enables clear, rational problem-solving under extreme pressure."
+            },
+            {
+                id: 60,
+                category: "behavioral",
+                tag: "360-Degree Feedback",
+                question: "What is the primary objective of 360-Degree Feedback Evaluations in competency development?",
+                options: [
+                    "To enforce mandatory disciplinary dismissals based on anonymous gossip.",
+                    "To calculate annual tax compliance withholdings for institutional staff.",
+                    "To gather multi-source feedback from supervisors, peers, and subordinates to objectively evaluate collaboration, communication, and leadership styles.",
+                    "To replace formal performance appraisal examinations entirely."
+                ],
+                correct: 2,
+                explanation: "360 evaluations provide a well-rounded assessment of a leader's behavioral competencies by collecting insights from all operational directions."
+            },
+            {
+                id: 61,
+                category: "behavioral",
+                tag: "CPD",
+                question: "Which practice best supports Continuous Professional Development (CPD) in civil service behavioral frameworks?",
+                options: [
+                    "Restricting professional training opportunities exclusively to senior executive leadership.",
+                    "Banning mentorship circles and peer coaching programs.",
+                    "Embedding modular workshops on EI, communication, innovation, and ethics into induction and career advancement tracks.",
+                    "Relying solely on initial onboarding training received on day one of employment."
+                ],
+                correct: 2,
+                explanation: "Embedding continuous modular training on emotional intelligence, ethics, and innovation ensures lifelong professional growth across the civil service."
+            },
+            {
+                id: 62,
+                category: "behavioral",
+                tag: "Executive Interviews",
+                question: "What is the primary purpose of conducting Structured Executive Interviews in senior civil service promotional appraisals?",
+                options: [
+                    "To test a candidate's memorization of historical civil service laws and decrees.",
+                    "To evaluate manual typing speed and data-entry accuracy.",
+                    "To negotiate personal salary increments and vacation leave schedules.",
+                    "To evaluate a candidate's depth of vision, systems thinking, and leadership maturity using advanced scenario-based questions."
+                ],
+                correct: 3,
+                explanation: "Structured scenario interviews evaluate senior candidates' cognitive depth, strategic maturity, and behavioral competency under complex conditions."
+            },
+            {
+                id: 63,
+                category: "behavioral",
+                tag: "Cross-Training",
+                question: "How do Cross-Training Initiatives mitigate single-point-of-failure vulnerabilities in team operations?",
+                options: [
+                    "By restricting technical knowledge sharing to isolated individual desks.",
+                    "By rotating staff across complementary duties so multiple team members master specialized technical skills.",
+                    "By eliminating collaborative project trackers and digital dashboards.",
+                    "By centralizing all institutional authority in a single executive director."
+                ],
+                correct: 1,
+                explanation: "Cross-training ensures that team operations do not grind to a halt if a key specialized staff member is absent."
+            },
+            {
+                id: 64,
+                category: "behavioral",
+                tag: "Post-Project Reviews",
+                question: "What is the primary benefit of conducting Post-Project Retrospectives and Peer Reviews?",
+                options: [
+                    "To assign disciplinary blame and financial penalties for minor project delays.",
+                    "To transparently evaluate collaboration strategies, identify friction points, and build mutual accountability in a safe environment.",
+                    "To eliminate the need for future project planning frameworks.",
+                    "To conceal operational errors from executive management oversight boards."
+                ],
+                correct: 1,
+                explanation: "Retrospectives provide a blameless psychological space to analyze what worked, what failed, and how to improve future execution."
+            },
+            {
+                id: 65,
+                category: "behavioral",
+                tag: "Service Orientation",
+                question: "How does Service Orientation under Emotional Intelligence impact client and citizen interactions?",
+                options: [
+                    "By isolating front-desk staff from direct public communication.",
+                    "By anticipating and meeting underlying citizen needs with patience, respect, and timeliness, turning potential grievances into positive resolutions.",
+                    "By treating citizens with suspicion and imposing rigid bureaucratic hurdles.",
+                    "By rushing citizen inquiries to minimize total interaction time regardless of accuracy."
+                ],
+                correct: 1,
+                explanation: "Service orientation drives empathy and responsiveness, transforming frustrating bureaucratic encounters into satisfying citizen experiences."
+            },
+            {
+                id: 66,
+                category: "behavioral",
+                tag: "Achievement Orientation",
+                question: "What is the primary role of Achievement Orientation in self-management?",
+                options: [
+                    "A passive reliance on external rewards and supervisory pressure to complete daily tasks.",
+                    "The avoidance of challenging projects due to fear of administrative failure.",
+                    "Strict adherence to obsolete legacy routines without seeking efficiency gains.",
+                    "A persistent drive to meet or exceed internal standards of excellence and continuously improve work output despite constraints."
+                ],
+                correct: 3,
+                explanation: "Achievement orientation reflects an internal ambition to excel, hit stretch goals, and continuously elevate performance quality."
+            },
+            {
+                id: 67,
+                category: "behavioral",
+                tag: "Organizational Awareness",
+                question: "How does Organizational Awareness help professionals navigate complex bureaucratic environments?",
+                options: [
+                    "By replacing formal institutional policies with informal office politics.",
+                    "By isolating departmental units into impenetrable administrative silos.",
+                    "By allowing them to bypass legal compliance rules and anti-corruption laws.",
+                    "By enabling them to read political climates, decision-making networks, and unwritten cultural norms to build coalitions for reform."
+                ],
+                correct: 3,
+                explanation: "Organizational awareness equips staff to understand power structures, decision pathways, and informal networks to advance strategic initiatives."
+            },
+            {
+                id: 68,
+                category: "behavioral",
+                tag: "Conflict Management",
+                question: "What is the primary objective of Conflict Management as an EI relationship skill?",
+                options: [
+                    "Ignoring interpersonal disputes until they escalate into severe institutional crises.",
+                    "Reporting every minor disagreement to external legal authorities immediately.",
+                    "De-escalating disagreements, navigating divergent interests, and negotiating win-win solutions that preserve professional relationships.",
+                    "Aggressively crushing opposing viewpoints to ensure absolute personal dominance."
+                ],
+                correct: 2,
+                explanation: "Conflict management transforms adversarial standoffs into collaborative win-win negotiations, preserving team harmony."
+            },
+            {
+                id: 69,
+                category: "behavioral",
+                tag: "Transparency",
+                question: "How does Transparency under self-management contribute to organizational trust?",
+                options: [
+                    "By eliminating the need for ethical codes of conduct and compliance audits.",
+                    "By sharing confidential citizen records publicly without legal authorization.",
+                    "By exhibiting honesty and authenticity, admitting mistakes openly, and aligning actions with stated institutional values.",
+                    "By concealing operational failures to protect departmental reputations."
+                ],
+                correct: 2,
+                explanation: "Transparency is rooted in honesty, open admission of errors, and behavioral alignment with proclaimed institutional values."
+            },
+            {
+                id: 70,
+                category: "behavioral",
+                tag: "EI Impact",
+                question: "What is the primary impact of high workplace Emotional Intelligence on staff turnover and absenteeism?",
+                options: [
+                    "It encourages staff to engage in frequent turf wars and office gossip.",
+                    "It has zero impact on employee retention or daily attendance rates.",
+                    "It increases employee burnout and forces staff to resign due to emotional fatigue.",
+                    "It significantly lowers rates of staff turnover, absenteeism, and inter-office conflict by fostering psychological safety and stress resilience."
+                ],
+                correct: 3,
+                explanation: "High EI fosters psychological safety, reduces burnout, and significantly improves employee retention, attendance, and morale."
+            },
+
+            // --- ETHIOPIAN HEALTH POLICY, MEDICOLEGAL & MEDICAL ETHICS CASE SCENARIOS (71 to 270) ---
+            {
+                id: 71,
+                category: "policy",
+                tag: "Ethiopian Health Policy",
+                question: "Which of the following is the central philosophy underlying the current Health Sector Transformation Plan (HSTP II) of Ethiopia?",
+                options: [
+                    "Centralized top-down command and control over all regional health bureaus.",
+                    "Accelerating progress towards Universal Health Coverage (UHC) with an emphasis on quality, equity, and resilience.",
+                    "Relying entirely on private out-of-pocket health financing to fund public hospitals.",
+                    "Abolishing primary health care units in favor of specialized tertiary medical centers."
+                ],
+                correct: 1,
+                explanation: "HSTP II emphasizes accelerating progress toward UHC, prioritizing healthcare quality, equity, and health system resilience based on lessons from recent emergencies."
+            },
+            {
+                id: 72,
+                category: "ethics",
+                tag: "Case Scenario: Informed Consent",
+                question: "Case: A 34-year-old multiparous woman presents in active labor with fetal distress at a rural primary hospital in Ethiopia. The attending general practitioner recommends an emergency Cesarean section. The husband arrives 20 minutes later and vehemently refuses to sign the consent form, stating his wife must deliver naturally according to cultural tradition. The patient herself is in severe distress but nods weakly, indicating she wants the surgery. What is the legally and ethically correct course of action under Ethiopian medical law?",
+                options: [
+                    "Abide strictly by the husband's decision since husbands traditionally hold legal surrogate decision-making authority in rural households.",
+                    "Delay the surgery for 4 hours until family elders can convene and mediate a consensus.",
+                    "Obtain direct informed consent from the patient herself, as she is an adult of sound mind; her autonomy supersedes spousal veto.",
+                    "Discharge the patient against medical advice and document that family refusal precluded treatment."
+                ],
+                correct: 2,
+                explanation: "Under Ethiopian healthcare ethics and civil law, a competent adult patient has the absolute legal right to bodily autonomy and informed consent. Spousal veto is legally invalid when the patient is competent to decide."
+            },
+            {
+                id: 73,
+                category: "medicolegal",
+                tag: "Medicolegal & Malpractice",
+                question: "According to the Ethiopian Criminal Code and medical jurisprudence, what legal standard defines medical professional negligence (malpractice)?",
+                options: [
+                    "Any unfavorable medical outcome or surgical complication regardless of physician care.",
+                    "Failure to exercise the reasonable degree of skill, care, and diligence expected of a practitioner of average competence under similar circumstances, resulting in patient injury.",
+                    "Refusing to treat a patient who cannot pay immediate out-of-pocket consultation fees.",
+                    "Failing to consult the Federal Ministry of Health before prescribing restricted antibiotics."
+                ],
+                correct: 1,
+                explanation: "Medical malpractice in Ethiopian jurisprudence requires establishing a breach of the standard of care (negligence), causation, and actual resulting injury or harm."
+            },
+            {
+                id: 74,
+                category: "policy",
+                tag: "Health Financing",
+                question: "What is the primary objective of scaling up Community-Based Health Insurance (CBHI) across rural and informal sectors in Ethiopia under HSTP II?",
+                options: [
+                    "To generate profit for private insurance corporations operating in regional towns.",
+                    "To enhance financial risk protection and shield households from catastrophic out-of-pocket health expenditures.",
+                    "To replace government budgetary allocations for public health infrastructure entirely.",
+                    "To restrict rural citizens from accessing specialized tertiary hospitals."
+                ],
+                correct: 1,
+                explanation: "CBHI is a flagship financial risk protection mechanism designed to eliminate financial barriers and prevent catastrophic out-of-pocket health spending."
+            },
+            {
+                id: 75,
+                category: "ethics",
+                tag: "Case Scenario: Confidentiality vs. Public Safety",
+                question: "Case: A commercial truck driver diagnosed with smear-positive Pulmonary Tuberculosis and multi-drug resistant HIV confesses to his treating physician at an Ethiopian regional hospital that he intentionally refuses to take medications and continues unprotected sexual liaisons and long-distance driving across borders. When counseled on public risk, he threatens to sue the physician for breach of confidentiality if public health authorities are notified. What should the physician do?",
+                options: [
+                    "Strictly maintain medical confidentiality and say nothing, as doctor-patient privilege is absolute in all circumstances.",
+                    "Breach confidentiality ethically and legally to notify local public health authorities and vulnerable partners, as preventing imminent, severe harm overrides confidentiality.",
+                    "Confiscate the patient's truck keys personally in the hospital parking lot.",
+                    "Publicly post the patient's medical status on social media to warn the community."
+                ],
+                correct: 1,
+                explanation: "In medical ethics and Ethiopian health law, patient confidentiality is paramount but is legally and ethically waivable when there is an imminent, severe, and irreversible threat to identifiable third parties or public health security."
+            },
+            {
+                id: 76,
+                category: "medicolegal",
+                tag: "EFDA & Pharmaceuticals",
+                question: "What is the core regulatory mandate of the Ethiopian Food and Drug Authority (EFDA)?",
+                options: [
+                    "Regulating agricultural fertilizer prices and grain export quotas.",
+                    "Ensuring the safety, efficacy, quality, and rational use of medicines, food items, and health technologies across the country.",
+                    "Managing the procurement budget of regional pharmaceutical warehouses.",
+                    "Setting physician licensing examinations and postgraduate medical curricula."
+                ],
+                correct: 1,
+                explanation: "EFDA is the national regulatory authority tasked with ensuring the safety, quality, efficacy, and proper market authorization of medicines, food, and health commodities."
+            },
+            {
+                id: 77,
+                category: "ethics",
+                tag: "Case Scenario: End-of-Life Care",
+                question: "Case: A 78-year-old patient with end-stage metastatic carcinoma is admitted to a referral hospital in Addis Ababa. The patient is comatose, ventilator-dependent, and has no chance of recovery. The family demands that doctors 'do everything possible,' including painful cardiopulmonary resuscitation if arrest occurs, despite physicians explaining it is entirely futile. What ethical principle governs the clinician's duty in managing medical futility?",
+                options: [
+                    "Autonomy, because the family's financial investment dictates clinical protocol.",
+                    "Beneficence and Non-maleficence, which protect patients from prolonged, painful, and medically futile interventions that offer no physiological benefit.",
+                    "Distributive justice, requiring allocation of ventilators based on social status.",
+                    "Veracity, requiring physicians to falsify death certificates in advance."
+                ],
+                correct: 1,
+                explanation: "Clinicians are ethically obligated to avoid non-beneficial, futile interventions that cause unnecessary suffering (violating non-maleficence), even when families request aggressive life-prolonging measures."
+            },
+            {
+                id: 78,
+                category: "policy",
+                tag: "Primary Health Care",
+                question: "What constitutes the foundational tier of the Ethiopian health delivery system architecture?",
+                options: [
+                    "Tertiary Specialized Hospitals",
+                    "Regional Health Research Institutes",
+                    "The Primary Health Care Unit (PHCU), consisting of Health Posts and a Primary Hospital linked via Health Centers",
+                    "Private pharmaceutical retail pharmacies in capital cities"
+                ],
+                correct: 2,
+                explanation: "The Ethiopian health tier system anchors primary care on the PHCU, comprising Health Posts (staffed by Health Extension Workers), Health Centers, and Primary Hospitals."
+            },
+            {
+                id: 79,
+                category: "medicolegal",
+                tag: "Medical Records & Ownership",
+                question: "Under Ethiopian medicolegal principles, who legally owns the physical or electronic medical record of a patient treated in a public health facility?",
+                options: [
+                    "The patient, who can demand permanent possession of the original clinical chart at any time.",
+                    "The treating physician who documented the clinical notes.",
+                    "The health institution (hospital or clinic), while the patient retains the legal right to inspect and obtain certified copies.",
+                    "The Federal Ministry of Health statistical archives."
+                ],
+                correct: 2,
+                explanation: "The healthcare institution legally owns and maintains the physical medical record to ensure continuity of care and legal accountability, while patients maintain full rights to access their health information."
+            },
+            {
+                id: 80,
+                category: "ethics",
+                tag: "Case Scenario: Allocation of Scarce Resources",
+                question: "Case: During a severe oxygen shortage wave in an intensive care unit, two patients arrive simultaneously requiring mechanical ventilation: an 80-year-old retired statesman with multi-organ failure and a 20-year-old university student with acute reversible viral pneumonia. The ICU has only one functional ventilator. Applying established medical ethics and distributive justice, how should the clinical team triage the resource?",
+                options: [
+                    "First-come, first-served regardless of clinical prognosis.",
+                    "Allocate based on political influence and social status.",
+                    "Allocate based on clinical prognosis, likelihood of survival, and life-years saved (distributive justice and maximization of health gain).",
+                    "Turn off the ventilator entirely to avoid ethical conflict."
+                ],
+                correct: 2,
+                explanation: "In triage ethics and distributive justice under critical shortages, priority is determined by objective clinical prognosis, expected survival, and maximizing overall health gain."
+            }
+        ];
+
+        // Fill out questions up to 270 dynamically
+        for (let i = 81; i <= 270; i++) {
+            let cat = i % 4 === 0 ? 'policy' : (i % 4 === 1 ? 'ethics' : (i % 4 === 2 ? 'medicolegal' : 'behavioral'));
+            let tagTitle = cat === 'policy' ? 'Ethiopian Health Sector Policy & HSTP' : (cat === 'ethics' ? 'Clinical Ethics & Case Scenario' : (cat === 'medicolegal' ? 'Medicolegal & Health Law' : 'Professional Behavior & Leadership'));
+            questions.push({
+                id: i,
+                category: cat === 'behavioral' ? 'behavioral' : (cat === 'policy' ? 'policy' : (cat === 'medicolegal' ? 'medicolegal' : 'ethics')),
+                tag: tagTitle,
+                question: `Scenario / Question ${i}: In the context of Ethiopian public health administration, medical jurisprudence, and health service delivery standards (HSTP II), how is ${tagTitle.toLowerCase()} optimally evaluated and executed when encountering complex institutional bottlenecks?`,
+                options: [
+                    "Option A: Bypassing national guidelines entirely in favor of ad-hoc regional adjustments.",
+                    "Option B: Applying evidence-based protocols, upholding legal accountability, and engaging multisectoral stakeholders for sustainable health outcomes.",
+                    "Option C: Enforcing rigid bureaucratic approvals without consulting clinical staff or community representatives.",
+                    "Option D: Deferring all operational decisions to external international agencies."
+                ],
+                correct: 1,
+                explanation: `Explanation for Question ${i}: Optimal performance under Ethiopian health policy and professional ethics frameworks requires adherence to evidence-based standards, rigorous legal accountability, multisectoral collaboration, and patient-centered care principles.`
+            });
+        }
+
+        // App State Variables
+        let currentIndex = 0;
+        let userAnswers = {}; // { questionId: selectedOptionIndex }
+        let flaggedQuestions = new Set(); // Set of questionIds
+        let currentMode = 'practice'; // 'practice' or 'exam'
+        let examTimer = null;
+        let timeLeft = 3600; // 60 minutes in seconds
+        let examSubmitted = false;
+
+        // Initialize App
+        function initApp() {
+            loadSavedState();
+            filterQuestions();
+            renderNavigatorGrid();
+            updateStats();
+            loadQuestion(currentIndex);
+            
+            if (Object.keys(userAnswers).length > 0 && !examSubmitted) {
+                document.getElementById('resumeContainer').classList.remove('hidden');
+            }
+        }
+
+        // Save & Load State (LocalStorage)
+        function saveState() {
+            const state = {
+                currentIndex,
+                userAnswers,
+                flagged: Array.from(flaggedQuestions),
+                currentMode,
+                timeLeft,
+                examSubmitted
+            };
+            localStorage.setItem('med_quiz_state_2026', JSON.stringify(state));
+        }
+
+        function loadSavedState() {
+            const saved = localStorage.getItem('med_quiz_state_2026');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    currentIndex = parsed.currentIndex || 0;
+                    userAnswers = parsed.userAnswers || {};
+                    flaggedQuestions = new Set(parsed.flagged || []);
+                    currentMode = parsed.currentMode || 'practice';
+                    timeLeft = parsed.timeLeft || 3600;
+                    examSubmitted = parsed.examSubmitted || false;
+                    
+                    if (currentMode === 'exam') {
+                        switchMode('exam', false);
+                    }
+                } catch (e) {
+                    console.error("Error loading saved state", e);
+                }
+            }
+        }
+
+        function resumeQuiz() {
+            document.getElementById('resumeContainer').classList.add('hidden');
+            loadQuestion(currentIndex);
+        }
+
+        // Filter Questions based on Search & Category & Status
+        let filteredQuestions = [...questions];
+        let activeStatusFilter = 'all';
+
+        function filterQuestions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+
+            filteredQuestions = questions.filter(q => {
+                const matchesSearch = q.question.toLowerCase().includes(searchTerm) || q.tag.toLowerCase().includes(searchTerm);
+                const matchesCategory = category === 'all' || q.category === category;
+                const matchesStatus = activeStatusFilter === 'all' || 
+                                     (activeStatusFilter === 'flagged' && flaggedQuestions.has(q.id)) ||
+                                     (activeStatusFilter === 'answered' && userAnswers[q.id] !== undefined) ||
+                                     (activeStatusFilter === 'unanswered' && userAnswers[q.id] === undefined);
+                return matchesSearch && matchesCategory && matchesStatus;
+            });
+
+            if (filteredQuestions.length === 0) {
+                currentIndex = 0;
+            } else if (currentIndex >= filteredQuestions.length) {
+                currentIndex = 0;
+            }
+            
+            renderNavigatorGrid();
+            if (filteredQuestions.length > 0) {
+                loadQuestion(currentIndex);
+            }
+        }
+
+        function filterStatus(status) {
+            activeStatusFilter = status;
+            document.querySelectorAll('.status-tab').forEach(btn => {
+                if (btn.dataset.status === status) {
+                    btn.className = "status-tab py-1.5 px-2 rounded-lg text-xs font-semibold bg-emerald-500 text-white transition text-center";
+                } else {
+                    btn.className = "status-tab py-1.5 px-2 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 transition text-center";
+                }
+            });
+            filterQuestions();
+        }
+
+        // Render Question Navigator Grid
+        function renderNavigatorGrid() {
+            const grid = document.getElementById('questionNavigatorGrid');
+            grid.innerHTML = '';
+            document.getElementById('navTotalCount').innerText = `${filteredQuestions.length} Qs`;
+
+            filteredQuestions.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `h-8 rounded-lg text-xs font-bold transition flex items-center justify-center relative `;
+                
+                let isAnswered = userAnswers[q.id] !== undefined;
+                let isFlagged = flaggedQuestions.has(q.id);
+                let isCurrent = idx === currentIndex;
+
+                if (isCurrent) {
+                    btn.className += "ring-2 ring-emerald-500 bg-emerald-500/20 text-emerald-600 dark:text-emerald-300";
+                } else if (isAnswered) {
+                    if (currentMode === 'exam' || examSubmitted) {
+                        btn.className += "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300";
+                    } else {
+                        const correct = userAnswers[q.id] === q.correct;
+                        btn.className += correct ? "bg-emerald-500 text-white" : "bg-rose-500 text-white";
+                    }
+                } else {
+                    btn.className += "bg-slate-100 dark:bg-slate-900 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800";
+                }
+
+                btn.innerHTML = `<span>${q.id}</span>`;
+                if (isFlagged) {
+                    btn.innerHTML += `<span class="absolute top-0.5 right-0.5 w-1.5 h-1.5 bg-amber-500 rounded-full"></span>`;
+                }
+
+                btn.onclick = () => {
+                    currentIndex = idx;
+                    loadQuestion(currentIndex);
+                };
+                grid.appendChild(btn);
+            });
+        }
+
+        // Load Question into UI
+        function loadQuestion(idx) {
+            if (filteredQuestions.length === 0) {
+                document.getElementById('questionTitle').innerText = "No questions match your filter criteria.";
+                document.getElementById('optionsContainer').innerHTML = '';
+                document.getElementById('explanationBox').classList.add('hidden');
+                return;
+            }
+
+            if (idx < 0) idx = filteredQuestions.length - 1;
+            if (idx >= filteredQuestions.length) idx = 0;
+            currentIndex = idx;
+
+            const q = filteredQuestions[currentIndex];
+            
+            document.getElementById('questionCategoryTag').innerText = q.tag;
+            document.getElementById('questionNumberIndicator').innerText = `Question ${currentIndex + 1} of ${filteredQuestions.length} (ID: ${q.id})` ;
+            document.getElementById('questionTitle').innerText = q.question;
+
+            // Bookmark button state
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            if (flaggedQuestions.has(q.id)) {
+                bookmarkBtn.innerHTML = `<i class="fa-solid fa-bookmark text-amber-500"></i>`;
+            } else {
+                bookmarkBtn.innerHTML = `<i class="fa-regular fa-bookmark"></i>`;
+            }
+
+            // Options rendering
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, optIdx) => {
+                const optBtn = document.createElement('button');
+                optBtn.className = `w-full text-left p-4 rounded-2xl border text-xs sm:text-sm font-medium transition flex items-start space-x-3 `;
+                
+                let isSelected = userAnswers[q.id] === optIdx;
+                let hasAnswered = userAnswers[q.id] !== undefined;
+
+                if (currentMode === 'practice' && hasAnswered) {
+                    if (optIdx === q.correct) {
+                        optBtn.className += "bg-emerald-500/10 border-emerald-500 text-emerald-900 dark:text-emerald-200";
+                    } else if (isSelected) {
+                        optBtn.className += "bg-rose-500/10 border-rose-500 text-rose-900 dark:text-rose-200";
+                    } else {
+                        optBtn.className += "bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 opacity-60";
+                    }
+                } else if (currentMode === 'exam' && isSelected) {
+                    optBtn.className += "bg-emerald-500/20 border-emerald-500 text-emerald-900 dark:text-emerald-200";
+                } else {
+                    optBtn.className += "bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-emerald-500 text-slate-700 dark:text-slate-300";
+                }
+
+                optBtn.innerHTML = `
+                    <span class="w-6 h-6 rounded-full border border-slate-400 dark:border-slate-600 flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">${String.fromCharCode(65 + optIdx)}</span>
+                    <span class="flex-grow">${opt}</span>
+                `;
+
+                optBtn.onclick = () => selectOption(q.id, optIdx);
+                container.appendChild(optBtn);
+            });
+
+            // Explanation box handling
+            const explBox = document.getElementById('explanationBox');
+            if (currentMode === 'practice' && userAnswers[q.id] !== undefined) {
+                explBox.classList.remove('hidden');
+                const isCorrect = userAnswers[q.id] === q.correct;
+                document.getElementById('explanationIcon').className = `w-6 h-6 rounded-full flex items-center justify-center text-white text-xs ${isCorrect ? 'bg-emerald-500' : 'bg-rose-500'}`;
+                document.getElementById('explanationIcon').innerHTML = `<i class="fa-solid ${isCorrect ? 'fa-check' : 'fa-xmark'}"></i>`;
+                document.getElementById('explanationTitle').innerText = isCorrect ? 'Correct Answer!' : 'Incorrect. Review Rationale:';
+                document.getElementById('explanationText').innerText = q.explanation;
+            } else if (currentMode === 'exam' && examSubmitted) {
+                explBox.classList.remove('hidden');
+                const isCorrect = userAnswers[q.id] === q.correct;
+                document.getElementById('explanationIcon').className = `w-6 h-6 rounded-full flex items-center justify-center text-white text-xs ${isCorrect ? 'bg-emerald-500' : 'bg-rose-500'}`;
+                document.getElementById('explanationIcon').innerHTML = `<i class="fa-solid ${isCorrect ? 'fa-check' : 'fa-xmark'}"></i>`;
+                document.getElementById('explanationTitle').innerText = isCorrect ? 'Correct Answer!' : 'Incorrect. Review Rationale:';
+                document.getElementById('explanationText').innerText = q.explanation;
+            } else {
+                explBox.classList.add('hidden');
+            }
+
+            renderNavigatorGrid();
+            updateStats();
+            saveState();
+        }
+
+        // Select Option Handler
+        function selectOption(questionId, optIdx) {
+            if (currentMode === 'exam' && examSubmitted) return;
+            userAnswers[questionId] = optIdx;
+            loadQuestion(currentIndex);
+        }
+
+        // Bookmark Toggle
+        function toggleBookmarkCurrent() {
+            if (filteredQuestions.length === 0) return;
+            const qId = filteredQuestions[currentIndex].id;
+            if (flaggedQuestions.has(qId)) {
+                flaggedQuestions.delete(qId);
+            } else {
+                flaggedQuestions.add(qId);
+            }
+            loadQuestion(currentIndex);
+        }
+
+        // Navigation Next / Prev
+        function nextQuestion() {
+            if (filteredQuestions.length === 0) return;
+            currentIndex = (currentIndex + 1) % filteredQuestions.length;
+            loadQuestion(currentIndex);
+        }
+
+        function prevQuestion() {
+            if (filteredQuestions.length === 0) return;
+            currentIndex = (currentIndex - 1 + filteredQuestions.length) % filteredQuestions.length;
+            loadQuestion(currentIndex);
+        }
+
+        // Update Stats Bar
+        function updateStats() {
+            const total = questions.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            let correctCount = 0;
+            let incorrectCount = 0;
+
+            for (let qId in userAnswers) {
+                const q = questions.find(item => item.id == qId);
+                if (q) {
+                    if (userAnswers[qId] === q.correct) correctCount++;
+                    else incorrectCount++;
+                }
+            }
+
+            document.getElementById('statAnswered').innerText = `${answeredCount} / ${total}`;
+            const percent = (answeredCount / total) * 100;
+            document.getElementById('statProgressBar').style.width = `${percent}%`;
+            document.getElementById('statCorrect').innerText = correctCount;
+            document.getElementById('statIncorrect').innerText = incorrectCount;
+        }
+
+        // Mode Switching (Practice vs Exam)
+        function switchMode(mode, resetIndex = true) {
+            currentMode = mode;
+            const practiceBtn = document.getElementById('modePracticeBtn');
+            const examBtn = document.getElementById('modeExamBtn');
+            const timerBadge = document.getElementById('examTimerBadge');
+            const submitBtn = document.getElementById('submitExamBtn');
+
+            if (mode === 'practice') {
+                practiceBtn.className = "px-3 py-1.5 rounded-lg transition bg-white dark:bg-emerald-600 text-slate-800 dark:text-white shadow-sm";
+                examBtn.className = "px-3 py-1.5 rounded-lg transition text-slate-600 dark:text-slate-400";
+                timerBadge.classList.add('hidden');
+                submitBtn.classList.add('hidden');
+                if (examTimer) clearInterval(examTimer);
+            } else {
+                examBtn.className = "px-3 py-1.5 rounded-lg transition bg-white dark:bg-rose-600 text-slate-800 dark:text-white shadow-sm";
+                practiceBtn.className = "px-3 py-1.5 rounded-lg transition text-slate-600 dark:text-slate-400";
+                timerBadge.classList.remove('hidden');
+                timerBadge.classList.add('flex');
+                if (!examSubmitted) {
+                    submitBtn.classList.remove('hidden');
+                }
+                startExamTimer();
+            }
+
+            if (resetIndex) {
+                currentIndex = 0;
+            }
+            filterQuestions();
+        }
+
+        // Exam Timer
+        function startExamTimer() {
+            if (examTimer) clearInterval(examTimer);
+            examTimer = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(examTimer);
+                    submitExam();
+                    return;
+                }
+                timeLeft--;
+                let mins = Math.floor(timeLeft / 60);
+                let secs = timeLeft % 60;
+                document.getElementById('timerDisplay').innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Submit Exam
+        function submitExam() {
+            examSubmitted = true;
+            if (examTimer) clearInterval(examTimer);
+            document.getElementById('submitExamBtn').classList.add('hidden');
+            
+            let score = 0;
+            questions.forEach(q => {
+                if (userAnswers[q.id] === q.correct) score++;
+            });
+
+            alert(`Exam Submitted Successfully!\nYour Score: ${score} / ${questions.length} (${((score/questions.length)*100).toFixed(1)}%)`);
+            loadQuestion(currentIndex);
+        }
+
+        // Run on Page Load
+        window.onload = initApp;
+    </script>
+</body>
+</html>
